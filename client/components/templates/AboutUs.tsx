@@ -56,11 +56,10 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
-    height: "100%",
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
-    paddingVertical: 48,
+    paddingVertical: 64,
   },
   header: {
     fontSize: 32,
