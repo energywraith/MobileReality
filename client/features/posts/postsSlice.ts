@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../../store";
-import { fetchPosts } from "./postsThunks";
+import { deletePost, fetchPosts } from "./postsThunks";
 
 export interface Post {
   title: string;
@@ -34,9 +34,15 @@ export const postsSlice = createSlice({
     builder.addCase(fetchPosts.pending, (state, action) => {
       state.isLoading = true;
     });
+    builder.addCase(deletePost.pending, (state, action) => {
+      state.isLoading = true;
+    });
     builder.addCase(fetchPosts.fulfilled, (state, action) => {
       state.value = action.payload;
       state.isLoading = false;
+    });
+    builder.addCase(deletePost.fulfilled, (state, action) => {
+      fetchPosts();
     });
   },
 });
