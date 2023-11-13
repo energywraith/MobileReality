@@ -3,7 +3,7 @@ import { StyleSheet, Text, ImageBackground } from "react-native";
 
 import { View } from "../Themed";
 
-export default function AboutUs() {
+export default function Services() {
   return (
     <View style={styles.container}>
       <ImageBackground
