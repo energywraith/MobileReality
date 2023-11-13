@@ -1,33 +1,38 @@
 import { Text } from "../../components/Themed";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { Pressable, StyleSheet } from "react-native";
 import { router } from "expo-router";
-import { Post } from "../../features/posts/postsSlice";
+import { StyleSheet } from "react-native";
 
-export default function PostsList() {
+export default function PostDetails({ id }: { id: string | string[] }) {
   const { value: posts, isLoading: isPostsLoading } = useAppSelector(
     (state) => state.posts
   );
-
-  const onPressPostDetails = (id: Post["id"]) => {
-    router.replace(`/posts/${id}`);
-  };
 
   if (isPostsLoading) {
     return <Text>LOADING</Text>;
   }
 
-  return posts.map((post) => (
-    <Pressable onPress={() => onPressPostDetails(post.id)}>
-      <Text style={styles.post}>{post.title}</Text>
-    </Pressable>
-  ));
+  const post = posts.find((post) => post.id.toString() === id);
+
+  if (!post) {
+    router.back();
+    return;
+  }
+
+  return (
+    <>
+      <Text style={styles.line}>id: {post.id}</Text>
+      <Text style={styles.line}>title: {post.title}</Text>
+      <Text style={styles.line}>description: {post.description}</Text>
+      <Text style={styles.line}>createdAt: {post.createdAt}</Text>
+    </>
+  );
 }
 
 const styles = StyleSheet.create({
-  post: {
+  line: {
     color: "white",
-    fontSize: 24,
+    fontSize: 16,
     lineHeight: 48,
     fontWeight: "bold",
     paddingHorizontal: 24,

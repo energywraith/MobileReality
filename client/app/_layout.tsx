@@ -62,6 +62,12 @@ function RootLayoutNav() {
               headerTitle: "Posts",
             }}
           />
+          <Stack.Screen
+            name="posts/[slug]"
+            options={{
+              headerTitle: "Post",
+            }}
+          />
         </Stack>
       </ThemeProvider>
     </ReduxProvider>

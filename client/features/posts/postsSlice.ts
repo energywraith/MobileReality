@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../../store";
 import { fetchPosts } from "./postsThunks";
 
-interface Post {
+export interface Post {
   title: string;
   description: string;
   createdAt: string;

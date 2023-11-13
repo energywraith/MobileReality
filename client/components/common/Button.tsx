@@ -16,7 +16,7 @@ interface ButtonProps {
 
 export default function Button({ onPress, title, style }: ButtonProps) {
   return (
-    <Pressable style={[styles.button, style]} onPress={onPress}>
+    <Pressable style={[style, styles.button]} onPress={onPress}>
       <Text style={styles.text}>{title}</Text>
     </Pressable>
   );
