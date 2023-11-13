@@ -1,4 +1,6 @@
 import React from "react";
+import { ScrollView } from "react-native-gesture-handler";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import AboutUs from "../components/templates/AboutUs";
 import Gallery from "../components/templates/Gallery";
@@ -9,11 +11,13 @@ export default function MainScreen() {
   const onPressLearnMore = () => {};
 
   return (
-    <>
-      <AboutUs onPressLearnMore={onPressLearnMore} />
-      <Gallery />
-      <Services />
-      <Offer onPressLearnMore={onPressLearnMore} />
-    </>
+    <ScrollView>
+      <SafeAreaView>
+        <AboutUs onPressLearnMore={onPressLearnMore} />
+        <Gallery />
+        <Services />
+        <Offer onPressLearnMore={onPressLearnMore} />
+      </SafeAreaView>
+    </ScrollView>
   );
 }
