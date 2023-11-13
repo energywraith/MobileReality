@@ -12,6 +12,26 @@ export const fetchPosts = createAsyncThunk("posts/fetch", async () => {
   return responseJSON;
 });
 
+export const addPost = createAsyncThunk(
+  "posts/add",
+  async (body: { title: string; description: string }) => {
+    const response = await fetch(`http://localhost:3005/posts`, {
+      method: "POST",
+      headers: {
+        "x-api-key": "thisisapikey",
+      },
+      body: JSON.stringify({
+        ...body,
+        createdAt: new Date().toISOString(),
+      }),
+    });
+
+    const responseJSON = await response.json();
+
+    return responseJSON;
+  }
+);
+
 export const deletePost = createAsyncThunk(
   "posts/delete",
   async (id: string) => {
