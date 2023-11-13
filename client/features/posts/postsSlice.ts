@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../../store";
+import { fetchPosts } from "./postsThunks";
 
 interface Post {
   title: string;
@@ -11,18 +12,13 @@ interface Post {
 // Define a type for the slice state
 interface PostsState {
   value: Post[];
+  isLoading: boolean;
 }
 
 // Define the initial state using that type
 const initialState: PostsState = {
-  value: [
-    {
-      title: "My first post",
-      description: "This is my first post",
-      createdAt: "2000-01-14T07:00:01.879Z",
-      id: 1,
-    },
-  ],
+  value: [],
+  isLoading: false,
 };
 
 export const postsSlice = createSlice({
@@ -33,6 +29,15 @@ export const postsSlice = createSlice({
     addPost: (state) => {
       state.value = [];
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchPosts.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(fetchPosts.fulfilled, (state, action) => {
+      state.value = action.payload;
+      state.isLoading = false;
+    });
   },
 });
 
