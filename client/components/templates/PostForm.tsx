@@ -1,9 +1,10 @@
-import { Text, View, TextInput, Button } from "react-native";
+import { Text, View, TextInput } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { StyleSheet } from "react-native";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { AddPostBody, addPost } from "../../features/posts/postsThunks";
 import { router } from "expo-router";
+import Button from "../common/Button";
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -66,7 +67,11 @@ export default function App() {
         <Text style={styles.inputError}>This is required.</Text>
       )}
 
-      <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+      <Button
+        title="Submit"
+        onPress={handleSubmit(onSubmit)}
+        style={styles.button}
+      />
     </View>
   );
 }
@@ -81,5 +86,8 @@ const styles = StyleSheet.create({
   inputError: {
     marginHorizontal: 12,
     color: "red",
+  },
+  button: {
+    marginTop: 24,
   },
 });
