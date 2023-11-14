@@ -2,7 +2,7 @@ import React from "react";
 import { GestureResponderEvent, StyleSheet } from "react-native";
 
 import { Text, View } from "../Themed";
-import Button from "../common/Button";
+import Button from "./Button";
 
 interface InfoSectionProps {
   header: string;
