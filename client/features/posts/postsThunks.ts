@@ -1,5 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
+export interface AddPostBody {
+  title: string;
+  description: string;
+}
+
 export const fetchPosts = createAsyncThunk("posts/fetch", async () => {
   const response = await fetch("http://localhost:3005/posts", {
     headers: {
@@ -14,16 +19,14 @@ export const fetchPosts = createAsyncThunk("posts/fetch", async () => {
 
 export const addPost = createAsyncThunk(
   "posts/add",
-  async (body: { title: string; description: string }) => {
+  async (body: AddPostBody) => {
     const response = await fetch(`http://localhost:3005/posts`, {
       method: "POST",
       headers: {
         "x-api-key": "thisisapikey",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        ...body,
-        createdAt: new Date().toISOString(),
-      }),
+      body: JSON.stringify(body),
     });
 
     const responseJSON = await response.json();

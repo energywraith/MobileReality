@@ -5,9 +5,9 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Stack, router } from "expo-router";
 import { useEffect } from "react";
-import { useColorScheme } from "react-native";
+import { Button, useColorScheme } from "react-native";
 import { Provider as ReduxProvider } from "react-redux";
 import { store } from "../store";
 
@@ -48,6 +48,10 @@ export default function RootLayout() {
   return <RootLayoutNav />;
 }
 
+const onPressAddPost = () => {
+  router.replace("/posts/add");
+};
+
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
@@ -55,11 +59,20 @@ function RootLayoutNav() {
     <ReduxProvider store={store}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <Stack>
-          <Stack.Screen name="main" options={{ headerShown: false }} />
+          <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen
-            name="posts"
+            name="posts/index"
             options={{
               headerTitle: "Posts",
+              headerRight: () => (
+                <Button onPress={onPressAddPost} title="Add" />
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="posts/add"
+            options={{
+              headerTitle: "Add Post",
             }}
           />
           <Stack.Screen
