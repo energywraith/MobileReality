@@ -1,4 +1,4 @@
-import { Text } from "../../components/Themed";
+import { Text } from "../common/Themed";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { router } from "expo-router";
 import { StyleSheet } from "react-native";

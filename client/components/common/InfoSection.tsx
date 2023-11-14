@@ -1,7 +1,7 @@
 import React from "react";
 import { GestureResponderEvent, StyleSheet } from "react-native";
 
-import { Text, View } from "../Themed";
+import { Text, View } from "./Themed";
 import Button from "./Button";
 
 interface InfoSectionProps {

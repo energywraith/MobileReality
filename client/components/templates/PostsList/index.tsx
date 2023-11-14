@@ -1,4 +1,4 @@
-import { Text } from "../../Themed";
+import { Text } from "../../common/Themed";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { router } from "expo-router";
 import { Post as IPost } from "../../../features/posts/postsSlice";

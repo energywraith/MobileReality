@@ -1,4 +1,4 @@
-import { Text } from "../../Themed";
+import { Text } from "../../common/Themed";
 import { Pressable, StyleSheet, View } from "react-native";
 import { Post } from "../../../features/posts/postsSlice";
 import Button from "../../common/Button";
