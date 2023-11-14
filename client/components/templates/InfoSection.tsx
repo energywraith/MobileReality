@@ -23,7 +23,7 @@ export default function InfoSection({
     <View style={styles.container}>
       <Text
         style={styles.header}
-        lightColor="rgb(0,0,0,0)"
+        lightColor="rgb(0,0,0)"
         darkColor="rgba(255,255,255,0.8)"
       >
         {header}
