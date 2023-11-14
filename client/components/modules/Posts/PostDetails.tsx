@@ -1,8 +1,8 @@
-import { Text } from "../common/Themed";
-import { useAppSelector } from "../../hooks/useAppSelector";
+import { Text } from "../../common/Themed";
+import { useAppSelector } from "../../../hooks/useAppSelector";
 import { router } from "expo-router";
 import { StyleSheet } from "react-native";
-import Button from "../common/Button";
+import Button from "../../common/Button";
 
 interface PostDetailsProps {
   id: string;

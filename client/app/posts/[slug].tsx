@@ -1,8 +1,7 @@
 import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useLocalSearchParams } from "expo-router";
-import PostDetails from "../../components/templates/PostDetails";
-import Button from "../../components/common/Button";
+import PostDetails from "../../components/modules/Posts/PostDetails";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { deletePost } from "../../features/posts/postsThunks";
 import { router } from "expo-router";

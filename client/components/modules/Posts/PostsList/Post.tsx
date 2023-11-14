@@ -1,7 +1,7 @@
-import { Text } from "../../common/Themed";
+import { Text } from "../../../common/Themed";
 import { Pressable, StyleSheet, View } from "react-native";
-import { Post } from "../../../features/posts/postsSlice";
-import Button from "../../common/Button";
+import { Post } from "../../../../features/posts/postsSlice";
+import Button from "../../../common/Button";
 
 interface PostProps extends Omit<Post, "createdAt"> {
   onPressPost: (id: Post["id"]) => void;

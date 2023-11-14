@@ -1,10 +1,10 @@
 import { Text, View, TextInput } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { StyleSheet } from "react-native";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { AddPostBody, addPost } from "../../features/posts/postsThunks";
+import { useAppDispatch } from "../../../hooks/useAppDispatch";
+import { AddPostBody, addPost } from "../../../features/posts/postsThunks";
 import { router } from "expo-router";
-import Button from "../common/Button";
+import Button from "../../common/Button";
 
 export default function App() {
   const dispatch = useAppDispatch();

@@ -1,7 +1,7 @@
 import React from "react";
 import { GestureResponderEvent } from "react-native";
 
-import InfoSection from "../common/InfoSection";
+import InfoSection from "../../common/InfoSection";
 
 interface AboutUsProps {
   onPressLearnMore: (event: GestureResponderEvent) => void;

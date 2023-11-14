@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, ImageBackground } from "react-native";
 
-import { View } from "../common/Themed";
+import { View } from "../../common/Themed";
 
 export default function Services() {
   return (
