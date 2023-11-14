@@ -23,8 +23,7 @@ export default function Page() {
   return (
     <ScrollView>
       <SafeAreaView>
-        <PostDetails id={slug} />
-        <Button onPress={onButtonRemovePress} title="Delete" />
+        <PostDetails id={slug?.[0]} onButtonRemovePress={onButtonRemovePress} />
       </SafeAreaView>
     </ScrollView>
   );
