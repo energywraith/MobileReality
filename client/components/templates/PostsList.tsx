@@ -18,7 +18,7 @@ export default function PostsList() {
   }
 
   return posts.map((post) => (
-    <Pressable onPress={() => onPressPostDetails(post.id)}>
+    <Pressable key={post.id} onPress={() => onPressPostDetails(post.id)}>
       <Text style={styles.post}>{post.title}</Text>
     </Pressable>
   ));
