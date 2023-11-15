@@ -1,8 +1,8 @@
 import React from "react";
 import { GestureResponderEvent, StyleSheet } from "react-native";
 
-import { Text, View } from "../Themed";
-import Button from "../common/Button";
+import { Text, View } from "./Themed";
+import Button from "./Button";
 
 interface InfoSectionProps {
   header: string;
@@ -23,7 +23,7 @@ export default function InfoSection({
     <View style={styles.container}>
       <Text
         style={styles.header}
-        lightColor="rgb(0,0,0,0)"
+        lightColor="rgb(0,0,0)"
         darkColor="rgba(255,255,255,0.8)"
       >
         {header}

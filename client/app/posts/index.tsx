@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useEffect } from "react";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { fetchPosts } from "../../features/posts/postsThunks";
-import PostsList from "../../components/templates/PostsList";
+import PostsList from "../../components/modules/Posts/PostsList";
 
 export default function Posts() {
   const dispatch = useAppDispatch();
